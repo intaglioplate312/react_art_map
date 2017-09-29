@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Map from './components/Map';
 import Footer from './components/Footer';
 
+
 class App extends Component {
   render() {
     return (
@@ -16,8 +17,10 @@ class App extends Component {
         </div>
         <NavBar></NavBar>
         <Header></Header>
+ 
         <Map></Map>
         <Footer></Footer>
+      
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
