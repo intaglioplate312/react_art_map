@@ -2,7 +2,7 @@
 Crowdsourced public art map of Chicago
 
 ##Project Requirements
-
+```
 Use ReactJS or Angular
 Use Node and Express Server
 Backed by MySQL with Sequelize ORM
@@ -13,7 +13,7 @@ Involve authentication of users in some way
 Polished fronted
 Folder structure meets MVC Paradigm
 Good quality coding standards(indentation, scoping, naming)
-
+```
 Initial Package Set Up
 # Create React Express App
 
