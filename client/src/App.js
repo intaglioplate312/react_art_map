@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Map from './components/Map';
 import Footer from './components/Footer';
+import Form from "./components/Form";
 
 
 class App extends Component {
