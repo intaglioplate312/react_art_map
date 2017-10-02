@@ -19,7 +19,7 @@ class App extends Component {
         {/* <Map></Map> */}
         <Footer></Footer>
       </div>
-    );
+    ); 
   }
 }
 
