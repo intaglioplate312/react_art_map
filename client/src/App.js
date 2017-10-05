@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import MediaDropdown from './components/MediaDropdown';
+// import MediaDropdown from './components/MediaDropdown';
 import './App.css';
-import NavBar from './components/NavBar';
-import Header from './components/Header';
-// import Map from './components/Map';
-import Footer from './components/Footer';
-import Form from "./components/Form";
+// import NavBar from './components/NavBar';
+import WholeNavBar from './components/WholeNavBar';
+import UploadForm from './components/UploadForm';
+import Form from './components/Form/Form'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        
-        <NavBar></NavBar>
-        <MediaDropdown></MediaDropdown>
-        <Header></Header>
-        {/* <Map></Map> */}
-        <Footer></Footer>
+        <WholeNavBar/>
+        <Form />
       </div>
     ); 
   }
