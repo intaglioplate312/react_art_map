@@ -4,6 +4,7 @@ import "./Form.css";
 class Form extends Component {
   // Setting the component's initial state
   state = {
+    uploadImage: "",
     artistName: "",
     titleName: "",
     description: "",
@@ -29,9 +30,9 @@ class Form extends Component {
       // we may want to change how we are putting in these warnings
       alert("please provide an address");
       // will the upload of the picture live in this component?
-    } else if (this.state.picture !== true) {
+    } else if (this.state.image !== true) {
       alert(
-        `we need a picture associated with the art `
+        `we need an image associated with the art `
       );
     } else {
       // if we are giving a review or admin option we'll need to change this
@@ -39,6 +40,7 @@ class Form extends Component {
     }
 
     this.setState({
+      uploadImage: "",
       artistName: "",
       titleName: "",
       description: "",
@@ -51,6 +53,13 @@ class Form extends Component {
     return (
       <div>
         <form className="form">
+          <input
+            value={this.state.uploadImage}
+            name= "image"
+            onChange={this.handleInputChange}
+            type="file"
+            placeholder="Upload Image"
+            />
           <input
             value={this.state.artistName}
             name="artistName"
