@@ -3,14 +3,17 @@ import "./Form.css";
 
 class Form extends Component {
   // Setting the component's initial state
-  state = {
+  constructor() {
+    super();
+    this.state = {
     uploadImage: "",
     artistName: "",
     titleName: "",
     description: "",
     address: ""
     // picture: will this live in this component or another one?
-  };
+  }
+};
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
