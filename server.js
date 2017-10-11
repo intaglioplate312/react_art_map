@@ -1,19 +1,27 @@
-const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3001;
-const app = express();
+var express = require('express');
+var fs = require('fs');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+var router = require('./controllers/publicArt_controller.js');
+var fileUpload = require('express-fileupload');
+var app = express();
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.set('port', (process.env.PORT || 8080));
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+app.use(methodOverride("_method"));
+
+app.use(express.static(process.cwd() + '/public'));
+
+app.use(fileUpload());
+
+app.use('/', router);
+
+app.listen(app.get('port'), function(){
+    console.log('running on 8080')
 });
