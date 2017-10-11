@@ -1,23 +1,26 @@
 
 import React from 'react';
-import {Modal, Popover, Tooltip, Button, OverlayTrigger} from 'react-bootstrap';
-
+import {Modal, Popover, Tooltip, Button, OverlayTrigger, bsStyle} from 'react-bootstrap';
+// import {Modal} from 'react-modal-bootstrap'
+// import react-modal from 'react-modal'
 
 export default class AuthModal extends React.Component {
   
-    constructor() {
-      super();
-      this.render.bind(this);
-      this.state = { showModal: false }
-    }
-  
-    close() {
+    // constructor() {
+    //   super();
+    //   this.render.bind(this);
+    //   this.state = { showModal: false }
+    // }
+  state = {
+    showModal: false
+  }
+    close = () => {
       this.setState({ showModal: false });
     }
   
-    open() {
+    open = () =>  {
       this.setState({ 
-        showModal: true,
+        showModal: true
       });
     }
   
@@ -42,7 +45,7 @@ export default class AuthModal extends React.Component {
         <div>
           <Button
             bsStyle="primary"
-            bsSize="medium"
+            bsSize="small"
             onClick={this.open}
           >
             Login
